@@ -28,24 +28,20 @@
         <tbody id="tbody"></tbody>
     </table>
     <script>
-        let myData = '';
+        
             let i=1;
         function adding(){
            // alert('hello');
            let name = document.querySelector('#name').value;
             console.log(name);
             let age = document.querySelector('#age').value;
-            console.log(age);
-
-             myData += `<tr>
+            console.log(age);             
+         let tbody = document.querySelector('#tbody');
+         tbody.innerHTML  += `<tr>
                   <td> ${i++}</td>
                   <td> ${name}</td>
                   <td> ${age}</td>
                   </tr>`
-                            
-    
-    let tbody = document.querySelector('#tbody');
-  tbody.innerHTML = myData;
 
         }
     </script>

@@ -5,21 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .error{
+            border-color: red;
+        }
+        small{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1>Calculator</h1>
     <form action="">
         <label for="numOne">Number One:</label>
-        <input type="number"name="numOne" id="numOne" required>
+        <input type="number"name="num1" id="num1" >
+        <small id="num1_err"></small>
         <br><br>
         <label for="numTwo">Number Two:</label>
-        <input type="number" name="number" id="numTwo" required>
+        <input type="number" name="num2" id="num2" >
+        <small id="num2_err"></small>
+        <br><br>
         <br><br>
         <label for="number">Result:</label>
-        <input type="number" name="number" id="result">
+        <input type="number" name="number" id="result" readonly>
         <br><br>
-        <button type="button" onclick="adding()">Add</button>
+        <button type="button" onclick="add()">Add</button>
     </form>
+    <script>
+        function formValidation(){
+            let num1= document.querySelector("#num1")
+           let num2 = document.querySelector("#num2")
+           let number1= num1.value;
+           let number2 = num2.value;
+           let num1_err =document.querySelector('#num1_err');
+          let num2_err = document.querySelector('#num2_err');
+
+           if (number1 === '' || number2 === ''){
+               removeError();
+               if(number1 ===''){
+                  // alert( 'Number one is required');
+                  showError(num1_err,num1,'Number one is required')
+
+               }
+               if(number2 ===''){
+                   //alert( 'Number two is required');
+                   showError(num2_err,num2,'Number two is required')
+
+
+                 }
+                 function showError(numError,numInput,message){
+                     console.log(numError,numInput,message);
+                     numInput.setAttribute('class','error');
+                     numError.innerHTML=message;
+
+                 }
+               }else{
+                   removeError()
+                   return {number1,number2}
+
+           }function removeError(){
+                   num1.removeAttribute('class')
+                   num2.removeAttribute('class')
+                   num1_err.innerHTML = '';
+                   num2_err.innerHTML = '';
+           }
+        }
+        function add(){
+           // alert('hello')
+           let numbers = formValidation();
+           console.log(numbers);
+           if(numbers){
+            
+           let result = Number(numbers.number1) + Number(numbers.number2);
+           console.log(result);
+           document.querySelector('#result').value =result;
+           }
+        }
+        
+    </script>
     
 </body>
 </html>
