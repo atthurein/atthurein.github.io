@@ -256,7 +256,10 @@ input[type="text"],input[type="email"]{
     margin-top: 20px;
     padding: 10px 20px;
 }
-
+.map{
+    margin-left: 50px;
+    margin-top: 20px;
+}
 
 /* about */
 .row{
@@ -390,10 +393,7 @@ input[type="text"],input[type="email"]{
     padding:10px 10px;
     text-decoration: none;
    }
-   .map{
-       margin-left: 50px;
-       margin-top: 20px;
-   }
+   
    /* end about */
    /* start shop */
    .brand label{
