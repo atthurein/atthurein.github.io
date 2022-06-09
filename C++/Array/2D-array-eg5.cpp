@@ -23,6 +23,15 @@ int main (){
        cout<<"Sum of"<< (c+1)<<"column = "<<total;
        cout <<"\n";
    }
+
+   for(int r =0; r< 2;r++){
+       int totalRow = 0;
+       for(int c = 0; c < 3; c++){
+           totalRow +=num[r][c];
+       }
+       cout<<"Sum of"<< (r+1)<<"row = "<<totalRow;
+       cout <<"\n";
+   }
    return 0;
 
 }
