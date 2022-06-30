@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day3 Assignment</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Name</label>
+        <input type="text" name ="username">
+        <br>
+        <br>
+
+
+        <label for="">Age</label>
+        <input type="number" name="age">
+        <br>
+        <br>
+        
+        <label for="">Single</label>
+        <input type="radio" name="radio" id="single">
+        
+        <label for="">Married</label>
+        <input type="radio" name="radio" id="married">
+        <br>
+        <label for="" class="spouse">Spouse</label>
+        <br>
+        <input type="text"class="spouse">
+        <br>
+        <br>
+        <input type="submit" style="background-color:red;color:white;font-size: 20px;" value="save">
+        
+    </form>
+
+
+
+
+
+   <!-- script -->
+   <script src="jquery.min.js"></script>
+   <script>$(function(){
+    $("#single").click(function(){
+        $(".spouse").hide()
+    })
+    $("#married").click(function(){
+        $(".spouse").show()
+    })
+
+    
+
+   })
+
+   </script>
+</body>
+</html>
