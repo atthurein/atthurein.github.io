@@ -8,21 +8,21 @@
 </head>
 <body>
     <form action="">
-        <label for="">Name</label>
-        <input type="text" name ="username">
+        <label for="username">Name</label>
+        <input type="text" name ="username" id="username">
         <br>
         <br>
 
 
-        <label for="">Age</label>
-        <input type="number" name="age">
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age">
         <br>
         <br>
         
-        <label for="">Single</label>
-        <input type="radio" name="radio" id="single">
+        <label for="single">Single</label>
+        <input type="radio" name="radio" id="single" checked >
         
-        <label for="">Married</label>
+        <label for="married">Married</label>
         <input type="radio" name="radio" id="married">
         <br>
         <label for="" class="spouse">Spouse</label>
@@ -41,6 +41,7 @@
    <!-- script -->
    <script src="jquery.min.js"></script>
    <script>$(function(){
+    $(".spouse").hide()
     $("#single").click(function(){
         $(".spouse").hide()
     })

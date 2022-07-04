@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-4 Assignment</title>
+</head>
+
+<body>
+   <form action="">
+        <input type="text" name="username" placeholder="Name">
+    <br> 
+   <h2>Hobbie:</h2>
+    <input type="checkbox" name="check" id="read"class="check" value="Reading">
+    <label for="read">Reading</label>
+    <input type="checkbox" name="check" id="Guitar" class="check" value="Playing Guitar">
+    <label for="Guitar">Playing Guitar</label>
+    <input type="checkbox" name="check" id="game" class="check" value="Game">
+    <label for="game">Game</label>
+    <br><br>
+    
+
+    <input type="submit" value="Save">
+    <div id="divresult"></div>
+    </form>
+
+    <script src="jquery.min.js"></script>
+    <script>$(function(){
+        
+        $("form").on("submit",function(event) {
+            event.preventDefault();
+            var name =$("input[name=username]").val()
+        //     var data =`My name is ${name}.. My Hobbies are:`;
+        //     var i =0;
+        //     var array = [];
+        //     $(".check:checked").each(function(){
+        //         array[i] = $(this).val()+", ";
+        //          data += `${array}`;
+        //         console.log(array[i]);
+                
+
+        //     })
+        //     alert(data);
+
+            var result =$('input[type="checkbox"]:checked');
+            if(result.length > 0) {
+                var resultString = result.length +" " ;
+                console.log(resultString);
+                result.each(function(){
+                    resultString += $(this).val() + "  ";
+                    
+                })
+                alert(`You name is ${name}..You Hobbies have ${resultString}`)
+                
+                
+            }else{
+                alert(`You name is ${name}..`)
+            }
+            
+            
+            
+            
+            
+        
+        })
+
+
+    })</script>
+</body>
+</html>
